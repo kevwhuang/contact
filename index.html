@@ -5,6 +5,7 @@
 <head>
 
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Contact Form</title>
@@ -16,6 +17,7 @@
             color: azure;
             font-size: 25px;
             padding: 5px;
+            text-transform: uppercase;
         }
 
         label {
@@ -32,19 +34,21 @@
 
 <body style="background-color:gainsboro;padding:5px">
 
-    <form action="results.html" method="GET" enctype="multipart/form-data">
+    <form action="results.html" target="_self" method="get" enctype="multipart/form-data" autocomplete="on">
 
         <h1>Basic</h1>
 
         <label for="fname">First Name:</label>
         <input id="fname" type="text" name="First name">
-        <label for="lname">&nbsp;&nbsp;&nbsp;Last Name:</label>
+        &nbsp;&nbsp;&nbsp;
+        <label for="lname">Last Name:</label>
         <input id="lname" type="text" name="Last name">
         <br><br>
 
         <label for="age">Age:</label>
         <input id="age" type="number" name="Age" min="1" max="150" step="1">
-        <label for="bday">&nbsp;&nbsp;&nbsp;Date of Birth:</label>
+        &nbsp;&nbsp;&nbsp;
+        <label for="bday">Date of Birth:</label>
         <input id="bday" type="date" name="Date of birth" min="1900-01-01" max="2022-10-01">
         <br><br>
 
@@ -55,35 +59,79 @@
         <label for="female">Female</label>
         <input id="pnts" type="radio" name="Gender" value="Prefer not to say">
         <label for="pnts">Prefer not to say</label>
+        <br><br>
+
+        <label>Ethnicity:</label>
+        <input list="browsers" name="Ethnicity">
+        <datalist id="browsers">
+            <option value="Caucasian">
+            <option value="Hispanic">
+            <option value="Asian">
+            <option value="Black">
+            <option value="Other">
+            <option value="Prefer not to say">
+        </datalist>
+        &nbsp;&nbsp;&nbsp;
+        <label for="education">Education:</label>
+        <select id="education" name="Education">
+            <optgroup label="High">
+                <option value="Postgraduate">Postgraduate</option>
+                <option value="Doctorate">Doctorate</option>
+                <option value="Master">Master</option>
+                <option value="Bachelor">Bachelor</option>
+                <option value="Associate">Associate</option>
+            </optgroup>
+            <optgroup label="Low">
+                <option value="Some college">Some college</option>
+                <option value="Occupational">Occupational</option>
+                <option value="High school">High school</option>
+                <option value="Little to none" selected>Little to none</option>
+            </optgroup>
+        </select>
 
         <h1>Contact</h1>
 
         <label for="phone">Phone:</label>
         <input id="phone" type="tel" name="Phone">
-        <label for="email">&nbsp;&nbsp;&nbsp;E-mail:</label>
+        &nbsp;&nbsp;&nbsp;
+        <label for="email">E-mail:</label>
         <input id="email" type="email" name="E-mail">
-        <label for="url">&nbsp;&nbsp;&nbsp;Website:</label>
+        &nbsp;&nbsp;&nbsp;
+        <label for="url">Website:</label>
         <input id="url" type="url" name="Website">
 
         <h1>Security</h1>
 
         <label for="key">Key:</label>
         <input id="key" type="password" name="Key">
-        <label for="file">&nbsp;&nbsp;&nbsp;DocuSign:</label>
+        &nbsp;&nbsp;&nbsp;
+        <label for="file">DocuSign:</label>
         <input id="file" type="file" name="DocuSign">
 
         <h1>Customization</h1>
 
-        <label for="pcolor">Profile Color:</label>
-        <input id="pcolor" type="color" name="Profile color">
-        <label for="hcolor">&nbsp;&nbsp;&nbsp;Header Color:</label>
-        <input id="hcolor" type="color" name="Header color">
-        <label for="bcolor">&nbsp;&nbsp;&nbsp;Background Color:</label>
-        <input id="bcolor" type="color" name="Background color">
+        <fieldset>
+            <legend>Primary Colors</legend>
+            <label for="pcolor">Profile:</label>
+            <input id="pcolor" type="color" name="Profile color">
+            &nbsp;&nbsp;&nbsp;
+            <label for="hcolor">Header:</label>
+            <input id="hcolor" type="color" name="Header color">
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>Secondary Colors</legend>
+            <label for="bcolor">Background:</label>
+            <input id="bcolor" type="color" name="Background color">
+            &nbsp;&nbsp;&nbsp;
+            <label for="acolor">Accent:</label>
+            <input id="acolor" type="color" name="Accent color">
+        </fieldset>
 
         <h1>Message</h1>
 
-        <textarea id="message" name="Message" cols="80" rows="10" minlength="20" maxlength="500"></textarea>
+        <textarea id="message" name="Message" rows="10" cols="80" minlength="20" maxlength="500"></textarea>
 
         <h1>Miscellaneous</h1>
 
@@ -92,8 +140,8 @@
         <label for="classmate">Classmate</label>
         <input id="linkedin" type="checkbox" name="Reference" value="LinkedIn">
         <label for="linkedin">LinkedIn</label>
-        <input id="resume" type="checkbox" name="Reference" value="Resume">
-        <label for="resume">Resume</label>
+        <input id="advertisement" type="checkbox" name="Reference" value="Advertisement">
+        <label for="advertisement">Advertisement</label>
         <input id="aca" type="checkbox" name="Reference" value="ACA">
         <label for="aca">ACA</label>
         <br><br>
@@ -105,20 +153,23 @@
         <label for="cbno">No</label>
         <br><br>
 
-        <label for="region">Region:</label>
-        <select id="region" name="Region">
-            <option label="North America" value="North America"></option>
-            <option label="South America" value="South America"></option>
-            <option label="Europe" value="Europe"></option>
-            <option label="Asia" value="Asia"></option>
-            <option label="Africa" value="Africa"></option>
-            <option label="Australia" value="Australia"></option>
+        <label for="experience">Experience Level:</label>
+        <input id="experience" type="range" name="Experience level" value="0">
+        &nbsp;&nbsp;&nbsp;
+        <label for="region">Regions:</label>
+        <select id="region" name="Region" size="2" multiple>
+            <option value="North America" selected>North America</option>
+            <option value="South America">South America</option>
+            <option value="Europe">Europe</option>
+            <option value="Asia">Asia</option>
+            <option value="Africa">Africa</option>
+            <option value="Australia">Australia</option>
         </select>
 
         <h1>Confirmation</h1>
 
+        <input type="submit" style="height:35px;width:100px">
         <button type="reset" style="height:35px;width:100px">Reset</button>
-        <button type="submit" style="height:35px;width:100px">Submit</button>
         <br><br>
 
     </form>
