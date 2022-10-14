@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Form</title>
+    <script src="scripts.js"></script>
+
+    <style>
+        h1 {
+            background-color: steelblue;
+            color: azure;
+            font-size: 25px;
+            padding: 5px;
+        }
+
+        label {
+            font-family: verdana;
+            font-size: 20px;
+        }
+
+        textarea {
+            resize: none;
+        }
+    </style>
+
+</head>
+
+<body style="background-color:gainsboro;padding:5px">
+
+    <form action="results.html" method="GET" enctype="multipart/form-data">
+
+        <h1>Basic</h1>
+
+        <label for="fname">First Name:</label>
+        <input id="fname" type="text" name="First name">
+        <label for="lname">&nbsp;&nbsp;&nbsp;Last Name:</label>
+        <input id="lname" type="text" name="Last name">
+        <br><br>
+
+        <label for="age">Age:</label>
+        <input id="age" type="number" name="Age" min="1" max="150" step="1">
+        <label for="bday">&nbsp;&nbsp;&nbsp;Date of Birth:</label>
+        <input id="bday" type="date" name="Date of birth" min="1900-01-01" max="2022-10-01">
+        <br><br>
+
+        <label>Gender:</label>
+        <input id="male" type="radio" name="Gender" value="Male">
+        <label for="male">Male</label>
+        <input id="female" type="radio" name="Gender" value="Female">
+        <label for="female">Female</label>
+        <input id="pnts" type="radio" name="Gender" value="Prefer not to say">
+        <label for="pnts">Prefer not to say</label>
+
+        <h1>Contact</h1>
+
+        <label for="phone">Phone:</label>
+        <input id="phone" type="tel" name="Phone">
+        <label for="email">&nbsp;&nbsp;&nbsp;E-mail:</label>
+        <input id="email" type="email" name="E-mail">
+        <label for="url">&nbsp;&nbsp;&nbsp;Website:</label>
+        <input id="url" type="url" name="Website">
+
+        <h1>Security</h1>
+
+        <label for="key">Key:</label>
+        <input id="key" type="password" name="Key">
+        <label for="file">&nbsp;&nbsp;&nbsp;DocuSign:</label>
+        <input id="file" type="file" name="DocuSign">
+
+        <h1>Customization</h1>
+
+        <label for="pcolor">Profile Color:</label>
+        <input id="pcolor" type="color" name="Profile color">
+        <label for="hcolor">&nbsp;&nbsp;&nbsp;Header Color:</label>
+        <input id="hcolor" type="color" name="Header color">
+        <label for="bcolor">&nbsp;&nbsp;&nbsp;Background Color:</label>
+        <input id="bcolor" type="color" name="Background color">
+
+        <h1>Message</h1>
+
+        <textarea id="message" name="Message" cols="80" rows="10" minlength="20" maxlength="500"></textarea>
+
+        <h1>Miscellaneous</h1>
+
+        <label>How did you hear about us?</label>
+        <input id="classmate" type="checkbox" name="Reference" value="Classmate">
+        <label for="classmate">Classmate</label>
+        <input id="linkedin" type="checkbox" name="Reference" value="LinkedIn">
+        <label for="linkedin">LinkedIn</label>
+        <input id="resume" type="checkbox" name="Reference" value="Resume">
+        <label for="resume">Resume</label>
+        <input id="aca" type="checkbox" name="Reference" value="ACA">
+        <label for="aca">ACA</label>
+        <br><br>
+
+        <label>Do you wish to be contacted?</label>
+        <input id="cbyes" type="radio" name="Contact back" value="Yes">
+        <label for="cbyes">Yes</label>
+        <input id="cbno" type="radio" name="Contact back" value="No">
+        <label for="cbno">No</label>
+        <br><br>
+
+        <label for="region">Region:</label>
+        <select id="region" name="Region">
+            <option label="North America" value="North America"></option>
+            <option label="South America" value="South America"></option>
+            <option label="Europe" value="Europe"></option>
+            <option label="Asia" value="Asia"></option>
+            <option label="Africa" value="Africa"></option>
+            <option label="Australia" value="Australia"></option>
+        </select>
+
+        <h1>Confirmation</h1>
+
+        <button type="reset" style="height:35px;width:100px">Reset</button>
+        <button type="submit" style="height:35px;width:100px">Submit</button>
+        <br><br>
+
+    </form>
+
+</body>
+
+</html>
