@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js"></script>
+
+    <style>
+        h1 {
+            background-color: steelblue;
+            color: azure;
+            font-size: 25px;
+            padding: 5px;
+            text-transform: uppercase;
+        }
+
+        label {
+            font-family: verdana;
+            font-size: 20px;
+        }
+
+        textarea {
+            resize: none;
+        }
+    </style>
+
+</head>
+
+<body style="background-color:gainsboro;padding:5px">
+
+    <form action="results.html" target="_self" method="get" enctype="multipart/form-data" autocomplete="on">
+
+        <h1>Basic</h1>
+
+        <label for="fname">First Name:</label>
+        <input id="fname" type="text" name="First name" />
+        &nbsp;&nbsp;&nbsp;
+
+        <label for="lname">Last Name:</label>
+        <input id="lname" type="text" name="Last name" />
+        <br /><br />
+
+        <label for="age">Age:</label>
+        <input id="age" type="number" name="Age" min="1" max="150" step="1" />
+        &nbsp;&nbsp;&nbsp;
+
+        <label for="bday">Date of Birth:</label>
+        <input id="bday" type="date" name="Date of birth" min="1900-01-01" max="2022-10-01" />
+        <br /><br />
+
+        <label>Gender:</label>
+        <input id="male" type="radio" name="Gender" value="Male" />
+        <label for="male">Male</label>
+        <input id="female" type="radio" name="Gender" value="Female" />
+        <label for="female">Female</label>
+        <input id="pnts" type="radio" name="Gender" value="Prefer not to say" />
+        <label for="pnts">Prefer not to say</label>
+        <br /><br />
+
+        <label>Ethnicity:</label>
+        <input list="browsers" name="Ethnicity" />
+        <datalist id="browsers">
+            <option value="Caucasian"></option>
+            <option value="Hispanic"></option>
+            <option value="Asian"></option>
+            <option value="Black"></option>
+            <option value="Other"></option>
+            <option value="Prefer not to say"></option>
+        </datalist>
+        &nbsp;&nbsp;&nbsp;
+
+        <label for="education">Education:</label>
+        <select id="education" name="Education">
+            <optgroup label="High">
+                <option value="Postgraduate">Postgraduate</option>
+                <option value="Doctorate">Doctorate</option>
+                <option value="Master">Master</option>
+                <option value="Bachelor">Bachelor</option>
+                <option value="Associate">Associate</option>
+            </optgroup>
+            <optgroup label="Low">
+                <option value="Some college">Some college</option>
+                <option value="Occupational">Occupational</option>
+                <option value="High school">High school</option>
+                <option value="Little to none" selected>Little to none</option>
+            </optgroup>
+        </select>
+
+        <h1>Contact</h1>
+
+        <label for="phone">Phone:</label>
+        <input id="phone" type="tel" name="Phone" />
+        &nbsp;&nbsp;&nbsp;
+
+        <label for="email">E-mail:</label>
+        <input id="email" type="email" name="E-mail" />
+        &nbsp;&nbsp;&nbsp;
+
+        <label for="url">Website:</label>
+        <input id="url" type="url" name="Website" />
+
+        <h1>Security</h1>
+
+        <label for="key">Key:</label>
+        <input id="key" type="password" name="Key" />
+        &nbsp;&nbsp;&nbsp;
+
+        <label for="file">DocuSign:</label>
+        <input id="file" type="file" name="DocuSign" />
+
+        <h1>Customization</h1>
+
+        <fieldset>
+            <legend>Primary Colors</legend>
+            <label for="pcolor">Profile:</label>
+            <input id="pcolor" type="color" name="Profile color" />
+            &nbsp;&nbsp;&nbsp;
+            <label for="hcolor">Header:</label>
+            <input id="hcolor" type="color" name="Header color" />
+        </fieldset>
+        <br />
+
+        <fieldset>
+            <legend>Secondary Colors</legend>
+            <label for="bcolor">Background:</label>
+            <input id="bcolor" type="color" name="Background color" />
+            &nbsp;&nbsp;&nbsp;
+            <label for="acolor">Accent:</label>
+            <input id="acolor" type="color" name="Accent color" />
+        </fieldset>
+
+        <h1>Message</h1>
+
+        <textarea id="message" name="Message" rows="10" cols="80" minlength="20"
+            maxlength="500">Your message goes here.</textarea>
+
+        <h1>Miscellaneous</h1>
+
+        <label>How did you hear about us?</label>
+        <input id="classmate" type="checkbox" name="Reference" value="Classmate" />
+        <label for="classmate">Classmate</label>
+        <input id="linkedin" type="checkbox" name="Reference" value="LinkedIn" />
+        <label for="linkedin">LinkedIn</label>
+        <input id="advertisement" type="checkbox" name="Reference" value="Advertisement" />
+        <label for="advertisement">Advertisement</label>
+        <input id="aca" type="checkbox" name="Reference" value="ACA" />
+        <label for="aca">ACA</label>
+        <br /><br />
+
+        <label>Do you wish to be contacted?</label>
+        <input id="cbyes" type="radio" name="Contact back" value="Yes" />
+        <label for="cbyes">Yes</label>
+        <input id="cbno" type="radio" name="Contact back" value="No" />
+        <label for="cbno">No</label>
+        <br /><br />
+
+        <label for="experience">Experience Level:</label>
+        <input id="experience" type="range" name="Experience level" value="0" />
+        &nbsp;&nbsp;&nbsp;
+
+        <label for="region">Regions:</label>
+        <select id="region" name="Region" size="2" multiple>
+            <option value="North America" selected>North America</option>
+            <option value="South America">South America</option>
+            <option value="Europe">Europe</option>
+            <option value="Asia">Asia</option>
+            <option value="Africa">Africa</option>
+            <option value="Australia">Australia</option>
+        </select>
+
+        <h1>Confirmation</h1>
+
+        <input type="submit" style="height:35px;width:100px" />
+        <button type="reset" style="height:35px;width:100px">Reset</button>
+        <br /><br />
+
+    </form>
+
+</body>
+
+</html>
